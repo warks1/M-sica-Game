@@ -1,25 +1,15 @@
-# Dime quién canta — Real Music Preview Beta
+# Dime quién canta — Real Music Beta v3.1
 
-Beta web móvil preparada para GitHub Pages. Reproduce **previews oficiales reales** recuperadas en tiempo real desde el catálogo de Apple/iTunes Search y usa únicamente 10 segundos de cada preview.
+Versión corregida y coherente para GitHub Pages. Usa previews oficiales reales recuperadas en tiempo real del catálogo Apple/iTunes Search. No incluye ni redistribuye archivos comerciales dentro del repositorio.
 
-## Funciones
+## Uso
+1. Sube el contenido de esta carpeta a la raíz del repositorio.
+2. Activa GitHub Pages desde la rama principal.
+3. Abre la web con conexión a Internet.
+4. En cada ronda pulsa **Cargar y escuchar canción real**. Este toque explícito es necesario en iPhone y otros móviles para permitir la reproducción de audio.
 
-- Canciones y artistas reales de los años 80 y 90.
-- Fragmento variable de 10 segundos dentro de la preview disponible.
-- Modos ¿Quién canta?, título, décadas, 80, 90, supervivencia, contrarreloj y experto.
-- Perfil, carrera, eventos, colección, ranking local, tienda, logros y guardado automático.
-- PWA instalable en smartphone.
-
-## Publicar en GitHub Pages
-
-1. Crea un repositorio nuevo.
-2. Sube todos los archivos de esta carpeta a la rama `main`.
-3. Abre **Settings → Pages**.
-4. Selecciona **Deploy from a branch**, rama `main`, carpeta `/root`.
+## Actualización desde una beta anterior
+La versión v3.1 cambia el identificador de caché y utiliza carga de red prioritaria. Si GitHub Pages siguiera mostrando una versión vieja, elimina la aplicación instalada/PWA una vez y vuelve a abrir la URL.
 
 ## Importante
-
-- La aplicación no almacena ni redistribuye canciones.
-- La disponibilidad de cada preview depende del catálogo, país y condiciones del proveedor.
-- Para un lanzamiento comercial, revisa y acepta las condiciones vigentes del proveedor y obtén asesoramiento sobre las licencias necesarias.
-- El conector musical está aislado en `resolvePreview()` para poder sustituirlo por MusicKit, Deezer u otro proveedor autorizado.
+La disponibilidad de cada preview depende del proveedor y del país. Antes de un lanzamiento comercial hay que confirmar por escrito que las condiciones del proveedor permiten este uso concreto.

@@ -6,20 +6,20 @@
   <meta name="theme-color" content="#080714" />
   <meta name="description" content="Dime quién canta: concurso musical retro para smartphone." />
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=3.1.0" />
   <title>Dime quién canta — Ultimate Mobile Beta</title>
 </head>
 <body>
   <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
   <main class="app-shell">
     <header class="topbar">
-      <button class="brand" data-go="home" aria-label="Inicio"><span>🎤</span><div><small>ULTIMATE MOBILE BETA</small><strong>Dime quién canta</strong></div></button>
+      <button class="brand" data-go="home" aria-label="Inicio"><span>🎤</span><div><small>REAL MUSIC BETA v3.1</small><strong>Dime quién canta</strong></div></button>
       <div class="wallet"><span>🪙 <b id="coinsTop">0</b></span><span>💎 <b id="gemsTop">0</b></span><button id="soundToggle" class="icon-button">🔊</button></div>
     </header>
 
     <section id="homeScreen" class="screen active">
       <div class="hero-card glass">
-        <div class="hero-copy"><p class="eyebrow">AÑOS 80 · 90</p><h1>¿Quién canta?</h1><p>Escucha un fragmento aleatorio de 10 segundos y demuestra cuánto sabes de música.</p><div class="hero-actions"><button class="primary-button" data-mode="classic">▶ Jugar ahora</button><button class="secondary-button" data-go="modes">Modos</button></div></div>
+        <div class="hero-copy"><p class="eyebrow">AÑOS 80 · 90</p><h1>¿Quién canta?</h1><p>Escucha 10 segundos de una preview oficial real y demuestra cuánto sabes de música.</p><div class="hero-actions"><button class="primary-button" data-mode="classic">▶ Jugar ahora</button><button class="secondary-button" data-go="modes">Modos</button></div></div>
         <div class="vinyl" aria-hidden="true"><span></span></div>
       </div>
       <div class="daily-card glass"><div><small>RETO DIARIO</small><h3>80 contra 90</h3><p>Consigue 7 aciertos en una partida.</p></div><button class="mini-button" data-mode="decades">Jugar</button></div>
@@ -41,7 +41,7 @@
         <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         <div class="timer-wrap"><svg class="timer" viewBox="0 0 120 120"><circle class="timer-bg" cx="60" cy="60" r="52"></circle><circle id="timerProgress" class="timer-progress" cx="60" cy="60" r="52"></circle></svg><strong id="timerText">10.0</strong><small>segundos</small></div>
         <div class="track-hidden"><span>♪</span><div><small>FRAGMENTO ALEATORIO</small><b id="questionText">¿Quién canta?</b></div></div>
-        <div class="powerups"><button id="fiftyButton">50:50 <b id="fiftyCount">2</b></button><button id="replayButton">↻ Repetir <b id="replayCount">2</b></button><button id="freezeButton">❄ +3s <b id="freezeCount">1</b></button></div>
+        <button id="listenButton" class="primary-button listen-button">▶ Cargar y escuchar canción real</button><div id="providerStatus" class="provider-status">Catálogo: Apple/iTunes Preview · conexión necesaria</div><div class="powerups"><button id="fiftyButton">50:50 <b id="fiftyCount">2</b></button><button id="replayButton">↻ Repetir <b id="replayCount">2</b></button><button id="freezeButton">❄ +3s <b id="freezeCount">1</b></button></div>
       </div>
       <div id="answers" class="answers"></div><p id="feedback" class="feedback"></p>
     </section>
@@ -65,6 +65,6 @@
 
   <nav class="bottom-nav"><button data-go="home" class="active">⌂<span>Inicio</span></button><button data-go="modes">▶<span>Jugar</span></button><button data-go="shop">🛍<span>Tienda</span></button><button data-go="profile">👤<span>Perfil</span></button><button data-go="settings">⚙<span>Ajustes</span></button></nav>
   <div id="toast" class="toast"></div>
-  <script src="app.js"></script>
+  <script src="app.js?v=3.1.0"></script>
 </body>
 </html>
