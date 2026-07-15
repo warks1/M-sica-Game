@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#12051f" />
+  <meta name="description" content="Beta móvil de Dime quién canta: reconoce canciones retro en 10 segundos." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Dime quién canta — Beta</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">BETA GITHUB</p>
+        <h1>Dime quién canta</h1>
+      </div>
+      <button id="soundToggle" class="icon-button" aria-label="Activar o silenciar efectos">🔊</button>
+    </header>
+
+    <section id="homeScreen" class="screen active">
+      <div class="hero-card">
+        <div class="vinyl" aria-hidden="true"><span></span></div>
+        <h2>¿Reconoces el tema en 10 segundos?</h2>
+        <p>Escucha un fragmento retro original, elige quién lo interpreta y suma puntos.</p>
+        <button id="startButton" class="primary-button">▶ Jugar partida</button>
+      </div>
+
+      <div class="stats-grid">
+        <article><span id="bestScore">0</span><small>Récord</small></article>
+        <article><span id="gamesPlayed">0</span><small>Partidas</small></article>
+        <article><span id="accuracy">0%</span><small>Aciertos</small></article>
+      </div>
+
+      <div class="info-card">
+        <h3>Contenido de esta beta</h3>
+        <p>10 rondas, fragmentos aleatorios, puntuación por rapidez, rachas, estadísticas locales y funcionamiento instalable como PWA.</p>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen" aria-live="polite">
+      <div class="game-status">
+        <span id="roundLabel">Ronda 1/10</span>
+        <span id="scoreLabel">0 puntos</span>
+      </div>
+
+      <div class="player-card">
+        <div class="equalizer" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <div class="timer-wrap">
+          <svg class="timer" viewBox="0 0 120 120" role="img" aria-label="Tiempo restante">
+            <circle class="timer-bg" cx="60" cy="60" r="52"></circle>
+            <circle id="timerProgress" class="timer-progress" cx="60" cy="60" r="52"></circle>
+          </svg>
+          <strong id="timerText">10.0</strong>
+        </div>
+        <button id="replayButton" class="secondary-button">↻ Repetir fragmento</button>
+      </div>
+
+      <div id="answers" class="answers"></div>
+      <p id="feedback" class="feedback"></p>
+    </section>
+
+    <section id="resultsScreen" class="screen">
+      <div class="results-card">
+        <p class="eyebrow">RESULTADO FINAL</p>
+        <h2 id="finalTitle">¡Buen oído!</h2>
+        <div class="final-score"><span id="finalScore">0</span><small>puntos</small></div>
+        <div class="result-stats">
+          <p><strong id="finalCorrect">0</strong><span>Aciertos</span></p>
+          <p><strong id="finalStreak">0</strong><span>Mejor racha</span></p>
+          <p><strong id="finalAverage">0.0 s</strong><span>Tiempo medio</span></p>
+        </div>
+        <button id="playAgainButton" class="primary-button">Jugar otra vez</button>
+        <button id="homeButton" class="secondary-button">Volver al inicio</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>Demo con música sintetizada original. No incluye grabaciones comerciales.</footer>
+  <script src="app.js"></script>
+</body>
+</html>

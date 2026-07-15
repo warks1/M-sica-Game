@@ -1,0 +1,10 @@
+{
+  "name": "Dime quién canta — Beta",
+  "short_name": "Dime quién canta",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#09020f",
+  "theme_color": "#12051f",
+  "description": "Juego musical retro para smartphone con fragmentos de 10 segundos.",
+  "icons": []
+}
