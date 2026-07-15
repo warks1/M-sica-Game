@@ -1,49 +1,25 @@
-# 🎤 Dime quién canta — Beta GitHub
+# Dime quién canta — Real Music Preview Beta
 
-Primera beta funcional para smartphone del juego **Dime quién canta**.
+Beta web móvil preparada para GitHub Pages. Reproduce **previews oficiales reales** recuperadas en tiempo real desde el catálogo de Apple/iTunes Search y usa únicamente 10 segundos de cada preview.
 
-## Incluye
+## Funciones
 
-- Diseño móvil vertical con estética retro/neón.
-- Partidas de 10 rondas.
-- Fragmentos musicales sintetizados de aproximadamente 10 segundos.
-- Selección aleatoria del patrón musical en cada reproducción.
-- Cuatro respuestas por ronda.
-- Puntuación por rapidez y bonus de racha.
-- Estadísticas y récord guardados en el dispositivo.
-- PWA instalable y compatible con GitHub Pages.
-- Sin dependencias externas.
-
-## Importante
-
-Esta demo **no contiene canciones comerciales**. Los fragmentos son patrones sintetizados originales generados en el navegador con Web Audio API. Para un lanzamiento comercial con grabaciones reales será necesario disponer de las licencias correspondientes.
-
-## Probar localmente
-
-Puedes abrir `index.html` directamente, aunque para probar el modo PWA es mejor usar un servidor local:
-
-```bash
-python3 -m http.server 8080
-```
-
-Después abre `http://localhost:8080`.
+- Canciones y artistas reales de los años 80 y 90.
+- Fragmento variable de 10 segundos dentro de la preview disponible.
+- Modos ¿Quién canta?, título, décadas, 80, 90, supervivencia, contrarreloj y experto.
+- Perfil, carrera, eventos, colección, ranking local, tienda, logros y guardado automático.
+- PWA instalable en smartphone.
 
 ## Publicar en GitHub Pages
 
-1. Crea un repositorio nuevo en GitHub.
-2. Sube todos los archivos de esta carpeta.
+1. Crea un repositorio nuevo.
+2. Sube todos los archivos de esta carpeta a la rama `main`.
 3. Abre **Settings → Pages**.
-4. En **Build and deployment**, selecciona **Deploy from a branch**.
-5. Elige la rama `main` y la carpeta `/root`.
-6. Guarda los cambios.
+4. Selecciona **Deploy from a branch**, rama `main`, carpeta `/root`.
 
-## Próxima evolución sugerida
+## Importante
 
-- Catálogo musical autorizado conectado a un backend.
-- Inicio de sesión y sincronización.
-- Modo 80, modo 90 y música española.
-- Clasificación online.
-- Retos diarios.
-- Avatares, logros y tienda cosmética.
-
-Todas las versiones futuras deben ser acumulativas y conservar las funciones existentes.
+- La aplicación no almacena ni redistribuye canciones.
+- La disponibilidad de cada preview depende del catálogo, país y condiciones del proveedor.
+- Para un lanzamiento comercial, revisa y acepta las condiciones vigentes del proveedor y obtén asesoramiento sobre las licencias necesarias.
+- El conector musical está aislado en `resolvePreview()` para poder sustituirlo por MusicKit, Deezer u otro proveedor autorizado.
