@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="40%"><stop offset="0" stop-color="#fff"/><stop offset=".24" stop-color="#00f4ff"/><stop offset=".56" stop-color="#b300ff"/><stop offset="1" stop-color="#050014"/></radialGradient>
+    <linearGradient id="t" x1="0" x2="1"><stop offset="0" stop-color="#00f4ff"/><stop offset=".5" stop-color="#ff2bd6"/><stop offset="1" stop-color="#ffd166"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="900" height="340" rx="48" fill="#070018"/>
+  <circle cx="165" cy="170" r="112" fill="url(#g)" filter="url(#glow)"/>
+  <circle cx="165" cy="170" r="68" fill="#090016" stroke="#fff" stroke-width="6" opacity=".92"/>
+  <path d="M145 105h65a28 28 0 0 1 28 28v74a72 72 0 0 1-144 0v-28h42v28a30 30 0 0 0 60 0v-72h-51z" fill="url(#t)" filter="url(#glow)"/>
+  <path d="M101 272h128" stroke="#00f4ff" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+  <text x="310" y="132" font-family="Arial Black, Montserrat, sans-serif" font-size="54" fill="#fff" filter="url(#glow)">DIME</text>
+  <text x="310" y="203" font-family="Arial Black, Montserrat, sans-serif" font-size="58" fill="url(#t)" filter="url(#glow)">QUIÉN CANTA</text>
+  <text x="314" y="252" font-family="Arial, sans-serif" font-size="24" letter-spacing="7" fill="#cfd4ff">80s · 90s · MUSIC QUIZ</text>
+</svg>

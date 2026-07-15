@@ -1,1 +1,1 @@
-{"name":"Dime quién canta — Ultimate Mobile Beta","short_name":"Quién canta","start_url":"./","display":"standalone","background_color":"#080714","theme_color":"#080714","description":"Concurso musical retro para smartphone.","icons":[]}
+{"name":"Dime quién canta — Final Beta","short_name":"Dime canta","start_url":"./index.html","display":"standalone","background_color":"#050014","theme_color":"#050014","orientation":"portrait","icons":[{"src":"logo.svg","sizes":"any","type":"image/svg+xml"}]}

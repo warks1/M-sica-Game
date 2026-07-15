@@ -1,70 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#080714" />
-  <meta name="description" content="Dime quién canta: concurso musical retro para smartphone." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Dime quién canta — Final Beta</title>
+  <meta name="theme-color" content="#050014" />
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="style.css?v=4.0.0?v=3.1.0" />
-  <title>Dime quién canta — Ultimate Mobile Beta</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
-  <main class="app-shell">
+  <div class="app-shell">
+    <div class="bg-grid"></div>
+    <div class="laser laser-a"></div><div class="laser laser-b"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
+
     <header class="topbar">
-      <button class="brand" data-go="home" aria-label="Inicio"><span>🎤</span><div><small>REAL MUSIC v4.0 · ARCHIVOS NUEVOS</small><strong>Dime quién canta</strong></div></button>
-      <div class="wallet"><span>🪙 <b id="coinsTop">0</b></span><span>💎 <b id="gemsTop">0</b></span><button id="soundToggle" class="icon-button">🔊</button></div>
+      <button class="ghost" id="homeBtn">⌂</button>
+      <div class="brand-mini"><img src="logo.svg" alt="Dime quién canta"/><span>FINAL BETA</span></div>
+      <div class="wallet"><span id="coins">0</span> 🪙 <span id="gems">0</span> 💎</div>
     </header>
 
-    <section id="homeScreen" class="screen active">
-      <div class="hero-card glass">
-        <div class="hero-copy"><p class="eyebrow">AÑOS 80 · 90</p><h1>¿Quién canta?</h1><p>Escucha 10 segundos de una preview oficial real y demuestra cuánto sabes de música.</p><div class="hero-actions"><button class="primary-button" data-mode="classic">▶ Jugar ahora</button><button class="secondary-button" data-go="modes">Modos</button></div></div>
-        <div class="vinyl" aria-hidden="true"><span></span></div>
-      </div>
-      <div class="daily-card glass"><div><small>RETO DIARIO</small><h3>80 contra 90</h3><p>Consigue 7 aciertos en una partida.</p></div><button class="mini-button" data-mode="decades">Jugar</button></div>
-      <div class="quick-grid">
-        <button class="tile" data-go="career"><span>🏟️</span><b>Carrera</b><small>Camino a la fama</small></button>
-        <button class="tile" data-go="events"><span>🎉</span><b>Eventos</b><small>Retos especiales</small></button>
-        <button class="tile" data-go="collection"><span>💿</span><b>Colección</b><small>Artistas y discos</small></button>
-        <button class="tile" data-go="leaderboard"><span>🏆</span><b>Ranking</b><small>Mejores jugadores</small></button>
-      </div>
-      <div class="progress-card glass"><div class="avatar">🎧</div><div class="grow"><div class="row"><b id="playerRank">Aficionado</b><span>Nivel <b id="levelText">1</b></span></div><div class="progress"><i id="xpBar"></i></div><small id="xpText">0 / 500 XP</small></div></div>
-    </section>
+    <main>
+      <section id="screenIntro" class="screen active intro-screen">
+        <div class="stage-lights"></div>
+        <img class="logo-hero" src="logo.svg" alt="Dime quién canta" />
+        <p class="tagline">Escucha 10 segundos. Responde. Demuestra quién sabe más.</p>
+        <div class="equalizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <button class="primary pulse" id="enterBtn">Entrar al concurso</button>
+        <a class="tiny-link" href="presentacion.html">Ver presentación del proyecto</a>
+        <p class="legal-note">Música real mediante previews oficiales en tiempo real. No se incluyen canciones comerciales dentro del paquete.</p>
+      </section>
 
-    <section id="modesScreen" class="screen"><div class="section-head"><button class="back" data-go="home">‹</button><div><small>ELIGE TU RETO</small><h2>Modos de juego</h2></div></div><div id="modeGrid" class="mode-grid"></div></section>
+      <section id="screenHome" class="screen home-screen">
+        <div class="hero-card glass">
+          <div>
+            <p class="eyebrow">DIME QUIÉN CANTA</p>
+            <h1>Concurso musical 80s · 90s</h1>
+            <p>Beta final con modos, carrera, eventos, colección, perfil, tienda, logros y música real.</p>
+          </div>
+          <div class="dj-mic">🎙️</div>
+        </div>
+        <div class="quick-actions">
+          <button class="primary big" data-quick="classic">▶ Jugar ahora</button>
+          <button class="secondary" id="dailyBtn">🏆 Campeón del día</button>
+        </div>
+        <nav class="menu-grid" id="mainMenu"></nav>
+        <div class="news glass">
+          <h3>🎉 Evento activo</h3>
+          <p id="eventText">Especial 80 vs 90 · doble XP en partidas perfectas.</p>
+        </div>
+      </section>
 
-    <section id="gameScreen" class="screen" aria-live="polite">
-      <div class="game-status"><button id="quitGame" class="back">‹</button><span id="modeLabel">Clásico</span><span id="roundLabel">1/10</span><b id="scoreLabel">0</b></div>
-      <div class="streak-line"><span id="streakLabel">Racha 0</span><div><i id="roundProgress"></i></div><span id="livesLabel">❤❤❤</span></div>
-      <div class="player-card glass">
-        <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="timer-wrap"><svg class="timer" viewBox="0 0 120 120"><circle class="timer-bg" cx="60" cy="60" r="52"></circle><circle id="timerProgress" class="timer-progress" cx="60" cy="60" r="52"></circle></svg><strong id="timerText">10.0</strong><small>segundos</small></div>
-        <div class="track-hidden"><span>♪</span><div><small>FRAGMENTO ALEATORIO</small><b id="questionText">¿Quién canta?</b></div></div>
-        <button id="listenButton" class="primary-button listen-button">▶ Cargar y escuchar canción real</button><div id="providerStatus" class="provider-status">Catálogo: Apple/iTunes Preview · conexión necesaria</div><div class="powerups"><button id="fiftyButton">50:50 <b id="fiftyCount">2</b></button><button id="replayButton">↻ Repetir <b id="replayCount">2</b></button><button id="freezeButton">❄ +3s <b id="freezeCount">1</b></button></div>
-      </div>
-      <div id="answers" class="answers"></div><p id="feedback" class="feedback"></p>
-    </section>
+      <section id="screenModes" class="screen">
+        <h2>Modos de juego</h2>
+        <div id="modesGrid" class="cards-grid"></div>
+      </section>
 
-    <section id="resultsScreen" class="screen"><div class="results-card glass"><p class="eyebrow">RESULTADO FINAL</p><div class="result-badge" id="resultBadge">🎤</div><h2 id="finalTitle">¡Buen oído!</h2><div class="final-score"><span id="finalScore">0</span><small>puntos</small></div><div class="reward-line"><span>+<b id="rewardXp">0</b> XP</span><span>+<b id="rewardCoins">0</b> monedas</span></div><div class="result-stats"><p><strong id="finalCorrect">0/10</strong><span>Aciertos</span></p><p><strong id="finalStreak">0</strong><span>Mejor racha</span></p><p><strong id="finalAverage">0.0 s</strong><span>Tiempo medio</span></p></div><div id="newAchievements" class="achievement-pop"></div><button id="playAgainButton" class="primary-button">Jugar otra vez</button><button class="secondary-button" data-go="home">Volver al inicio</button></div></section>
+      <section id="screenGame" class="screen game-screen">
+        <div class="game-head">
+          <div><p class="eyebrow" id="modeName">Modo</p><h2 id="roundTitle">Ronda 1/10</h2></div>
+          <div class="scorebox"><span id="score">0</span><small>puntos</small></div>
+        </div>
+        <div class="play-card glass">
+          <div class="timer-ring" id="timerRing"><span id="timerText">10</span></div>
+          <div class="vinyl" id="vinyl"><div></div></div>
+          <div class="status" id="statusText">Preparando preview real…</div>
+          <audio id="audio" preload="auto" playsinline></audio>
+          <div class="powerups">
+            <button id="fiftyBtn">50:50</button><button id="replayBtn">Replay</button><button id="timeBtn">+5s</button>
+          </div>
+        </div>
+        <div id="answers" class="answers"></div>
+        <div id="textAnswerBox" class="text-answer hidden"><input id="textAnswer" placeholder="Escribe artista o canción"/><button id="sendTextAnswer">Responder</button></div>
+        <div id="reveal" class="reveal hidden"></div>
+      </section>
 
-    <section id="profileScreen" class="screen"><div class="section-head"><button class="back" data-go="home">‹</button><div><small>MI CUENTA</small><h2>Perfil musical</h2></div></div><div class="profile-hero glass"><div class="big-avatar">🎧</div><h3>Toni</h3><p id="profileRank">Aficionado · Nivel 1</p><div class="progress"><i id="profileXpBar"></i></div></div><div id="profileStats" class="stats-grid"></div><h3 class="subheading">Insignias</h3><div id="badges" class="badge-grid"></div></section>
+      <section id="screenResults" class="screen results-screen">
+        <h2>Resultado</h2>
+        <div class="result-ring"><span id="finalScore">0</span><small>puntos</small></div>
+        <div id="resultStats" class="stats-grid"></div>
+        <button class="primary" id="againBtn">Jugar otra vez</button>
+        <button class="secondary" id="backHomeBtn">Volver al menú</button>
+      </section>
 
-    <section id="eventsScreen" class="screen"><div class="section-head"><button class="back" data-go="home">‹</button><div><small>CONTENIDO VIVO</small><h2>Eventos</h2></div></div><div class="event-feature glass"><small>EVENTO DE LA SEMANA</small><h3>Noche de neón</h3><p>Solo temas de los 80. Multiplicador de XP x2.</p><button class="primary-button" data-mode="eighties">Participar</button></div><div id="eventList" class="list-stack"></div></section>
+      <section id="screenProfile" class="screen"><h2>Perfil</h2><div id="profilePanel" class="profile-panel"></div></section>
+      <section id="screenCareer" class="screen"><h2>Camino a la fama</h2><div id="careerPanel" class="career-path"></div></section>
+      <section id="screenCollection" class="screen"><h2>Colección musical</h2><div id="collectionPanel" class="cards-grid"></div></section>
+      <section id="screenEvents" class="screen"><h2>Eventos y temporadas</h2><div id="eventsPanel" class="cards-grid"></div></section>
+      <section id="screenShop" class="screen"><h2>Tienda visual</h2><div id="shopPanel" class="cards-grid"></div></section>
+      <section id="screenRanking" class="screen"><h2>Clasificaciones</h2><div id="rankingPanel" class="ranking-panel"></div></section>
+      <section id="screenSettings" class="screen"><h2>Ajustes</h2><div id="settingsPanel" class="settings-panel"></div></section>
+    </main>
+  </div>
 
-    <section id="collectionScreen" class="screen"><div class="section-head"><button class="back" data-go="home">‹</button><div><small>TU HISTORIA MUSICAL</small><h2>Colección</h2></div></div><div class="filter-row"><button class="active">Todos</button><button>80</button><button>90</button></div><div id="collectionGrid" class="collection-grid"></div></section>
-
-    <section id="leaderboardScreen" class="screen"><div class="section-head"><button class="back" data-go="home">‹</button><div><small>COMPETICIÓN</small><h2>Clasificación</h2></div></div><div class="tabs"><button class="active">Semanal</button><button>Mundial</button><button>Amigos</button></div><div id="leaderboard" class="leaderboard glass"></div></section>
-
-    <section id="careerScreen" class="screen"><div class="section-head"><button class="back" data-go="home">‹</button><div><small>CAMINO A LA FAMA</small><h2>Modo Carrera</h2></div></div><div id="careerMap" class="career-map"></div></section>
-
-    <section id="shopScreen" class="screen"><div class="section-head"><button class="back" data-go="home">‹</button><div><small>PERSONALIZACIÓN</small><h2>Tienda retro</h2></div></div><div id="shopGrid" class="shop-grid"></div></section>
-
-    <section id="settingsScreen" class="screen"><div class="section-head"><button class="back" data-go="home">‹</button><div><small>PREFERENCIAS</small><h2>Ajustes</h2></div></div><div class="settings-list glass"><label><span>Música y efectos</span><input id="soundSetting" type="checkbox" checked></label><label><span>Vibración</span><input id="vibrationSetting" type="checkbox" checked></label><label><span>Animaciones</span><input id="motionSetting" type="checkbox" checked></label><label><span>Modo alto contraste</span><input id="contrastSetting" type="checkbox"></label><button id="resetProgress" class="danger-button">Restablecer progreso</button></div></section>
-  </main>
-
-  <nav class="bottom-nav"><button data-go="home" class="active">⌂<span>Inicio</span></button><button data-go="modes">▶<span>Jugar</span></button><button data-go="shop">🛍<span>Tienda</span></button><button data-go="profile">👤<span>Perfil</span></button><button data-go="settings">⚙<span>Ajustes</span></button></nav>
-  <div id="toast" class="toast"></div>
-  <script src="app.js?v=4.0.0?v=3.1.0"></script>
+  <script src="app.js"></script>
 </body>
 </html>
