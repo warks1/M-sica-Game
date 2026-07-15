@@ -30,3 +30,10 @@ Sube todos los archivos de esta carpeta directamente a la raíz del repositorio:
 - `LICENSE`
 
 Después activa GitHub Pages desde la rama principal y carpeta raíz.
+
+
+## v5.1
+- El primer toque en «Entrar al concurso» desbloquea el audio del navegador.
+- Desde ese momento cada ronda carga y reproduce su preview automáticamente.
+- Ya no se muestra ni se necesita un botón «Cargar y escuchar».
+- Safari/iPhone puede exigir ese único toque inicial por política del sistema.
