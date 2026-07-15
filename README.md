@@ -1,15 +1,15 @@
-# Dime quién canta — Real Music Beta v3.1
+# Dime quién canta — Real Music v4.0 (GitHub Pages)
 
-Versión corregida y coherente para GitHub Pages. Usa previews oficiales reales recuperadas en tiempo real del catálogo Apple/iTunes Search. No incluye ni redistribuye archivos comerciales dentro del repositorio.
+Esta entrega está preparada para subirse **en la raíz del repositorio**. No subas una carpeta contenedora.
 
-## Uso
-1. Sube el contenido de esta carpeta a la raíz del repositorio.
-2. Activa GitHub Pages desde la rama principal.
-3. Abre la web con conexión a Internet.
-4. En cada ronda pulsa **Cargar y escuchar canción real**. Este toque explícito es necesario en iPhone y otros móviles para permitir la reproducción de audio.
+Archivos que deben verse en la raíz de GitHub:
+- index.html
+- app.js
+- style.css
+- manifest.webmanifest
+- README.md
+- LICENSE
 
-## Actualización desde una beta anterior
-La versión v3.1 cambia el identificador de caché y utiliza carga de red prioritaria. Si GitHub Pages siguiera mostrando una versión vieja, elimina la aplicación instalada/PWA una vez y vuelve a abrir la URL.
+La pantalla debe mostrar siempre `REAL MUSIC v4.0 · ARCHIVOS NUEVOS` y una etiqueta verde `BUILD REAL MUSIC 4.0`. Si no aparece, GitHub Pages sigue sirviendo otros archivos o una rama/carpeta distinta.
 
-## Importante
-La disponibilidad de cada preview depende del proveedor y del país. Antes de un lanzamiento comercial hay que confirmar por escrito que las condiciones del proveedor permiten este uso concreto.
+Esta versión elimina el service worker para impedir que una beta anterior quede almacenada. Usa JSONP para consultar previews oficiales del catálogo iTunes/Apple y requiere conexión a Internet.
